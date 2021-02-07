@@ -16,6 +16,8 @@ export class AddEditTrainerComponent implements OnInit {
   gym:string;
   email:string;
   age:string;
+  photoFile:string;
+  trainerInfo:string;
 
 
   ngOnInit(): void {
@@ -24,6 +26,8 @@ export class AddEditTrainerComponent implements OnInit {
     this.gym=this.trainer.gym;
     this.email=this.trainer.email;
     this.age=this.trainer.age;
+    this.photoFile=this.trainer.photoFile;
+    this.trainerInfo=this.trainer.trainerInfo;
   }
 
   addTrainer(){
@@ -31,9 +35,11 @@ export class AddEditTrainerComponent implements OnInit {
               name:this.name,
               gym:this.gym,
               email:this.email,
-              age:this.age};
+              age:this.age,
+              photoFile:this.photoFile,
+              trainerInfo:this.trainerInfo};
         this.service.addTrainer(val).subscribe(res=>{
-          alert(res.toString());
+          alert("New trainer added!");
          
         });
       }
@@ -46,9 +52,11 @@ export class AddEditTrainerComponent implements OnInit {
       age:this.age,
       gym:this.gym,
       email:this.email,
+      photoFile:this.photoFile,
+      trainerInfo:this.trainerInfo
       };
     this.service.updateTrainer(val).subscribe(res=>{
-      alert(res.toString());
+      alert("Updated successfully!");
   });
 
   }

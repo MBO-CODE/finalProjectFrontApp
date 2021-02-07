@@ -29,19 +29,29 @@ data-backdrop="static" data-keyboard = "false"
 
 
 <table class = "table table-striped">
-    <thead>
+    <thead class="thead">
         <tr>
-            <th>Program ID</th>
-            <th>Program Name</th>
+            <th>
+              <div class ="d-flex flex row" name ="input">
+                <input [(ngModel)]="ProgramIdFilter" class="form-control" (keyup)="FilterFn()" placeholder="Filter">
+              </div> 
+
+              #</th> 
+            <th>
+              <div class ="d-flex flex row">
+                <input [(ngModel)]="ProgramNameFilter" class="form-control" (keyup)="FilterFn()" placeholder="Filter">
+              </div> 
+              
+              Name</th>
             <th>Category</th>
             <th>Description</th>
             <th>Trainer</th>
             <th>Options</th>
         </tr>
     </thead>
-        <tbody>
+        <tbody class="tbody">
             <tr *ngFor ="let dataItem of ProgramList">
-                <td>{{dataItem.programID}}</td>
+                <td class= "tdid">{{dataItem.programID}}.</td> 
                 <td>{{dataItem.progName}}</td>
                 <td>{{dataItem.category}}</td>
                 <td>{{dataItem.description}}</td>

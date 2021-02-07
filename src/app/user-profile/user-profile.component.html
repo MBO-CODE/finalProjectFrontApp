@@ -1,0 +1,9 @@
+<div *ngIf= "basicAuthService.getAuthenticatedUser()" class="nav-item dropdown basicAuthService.getAuthenticatedUser()">
+    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="authenticatedUser">
+      <i class="fas fa-user-graduate" id="userIcon"></i>{{basicAuthService.getAuthenticatedUser().username}}</a>
+      <div class="dropdown-menu">
+        <p class="dropdown-item currentUserRole">{{basicAuthService.getAuthenticatedUser().role}}</p>
+        <p class="dropdown-divider"></p>
+        <a *ngIf="isAdmin && !isUser" routerLink="/Trainer" class="dropdown-item"></a>
+        <a *ngIf="!isAdmin && isUser" routerLink="/Programs" class="dropdown-item"></a>
+  </div>

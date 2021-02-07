@@ -1,0 +1,21 @@
+.thead {
+    background-color: rgb(206, 164, 245);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color:rgb(51, 39, 39);
+    font-weight: 600;
+}
+
+.tbody {
+    background-color: rgb(238, 95, 95);
+    font:large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 800;
+}
+
+.tdid{
+    color:rgb(211, 230, 40);
+    text-shadow: black;
+}
+
+
+

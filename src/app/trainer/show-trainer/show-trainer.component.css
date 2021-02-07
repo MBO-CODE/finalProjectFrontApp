@@ -1,7 +1,173 @@
 .tablehead {
-    background-color: rgb(160, 160, 207);
+    background-color: rgb(245, 110, 69);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color:rgb(51, 39, 39);
+    font-weight: 600;
 }
 
 .tablebody {
-    background-color: rgb(240, 211, 140);
+    background-color: rgb(137, 100, 224);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 800;
+    font:large;
 }
+
+.tdid{
+color:rgb(49, 48, 48);
+text-shadow: rgb(59, 4, 4);
+font-weight: 800;
+font-style: fantasy;
+font:large;
+font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+justify-items: center;
+}
+
+.customCard {
+    max-width: 300px;
+    transition: transform 2s ease-in-out;
+    transform-style:preserve-3d;
+
+    
+}
+/* .customCard p, .back {
+    font-size: 18px;
+    font-weight: 600;
+} */
+
+.customCard:hover {
+    transform: rotateY(180deg);
+}  
+
+.card figure {
+    position: absolute;
+    width: 300px; 
+    height: 100%;
+    margin:0; 
+    text-align: center;
+    border-radius: 5px; 
+    align-items: center; 
+    display:flex;
+    flex-direction: column; 
+   
+
+}
+
+.card .back{
+    background-color: rgb(236, 228, 228);
+    transform: rotateY(180deg);
+}
+
+/* .cards{
+    margin:0 auto;
+    max-width: 1000px;
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+    gap:20px;
+    font-family: sans-serif;
+
+} */
+
+.card{
+    box-shadow: 0 0 3px rgb(0, 0, 0, 1);
+}
+
+.card__image{
+    width: 100%;
+    display: block;
+}
+
+.card__content{
+    line-height: 1.5;
+    font-size: 0.9em;
+    padding:15px;
+    background: #ccc4c4;
+    
+}
+
+.card__content > p:first-of-type{
+    margin-top: 0;
+
+
+}
+
+/* .card__content:hover .ullist> p:last-of-type{ */
+    .card__content > p:last-of-type{
+    margin-bottom: 0; 
+     /* position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transform: rotateY(180deg);
+     */
+
+}
+
+.card__info{
+    padding:15px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    columns: #555555;
+    background: #eeeeee;
+    font-size: 0.8em;
+    border-bottom:2px solid #cccccc;
+}
+
+.card__info svg{
+    font-size: 0.9em;
+    margin-right:8px;
+}
+
+.card__link{
+    color:#64968C;
+    text-decoration:none;
+}
+
+.card__link:hover{
+    text-decoration: underline;
+}
+
+/* .ullist{
+    justify-content: space-between;
+    align-items: center;
+    display: inline-table;
+} */
+
+.ulist2-container {
+ 
+  position: fixed;
+  display: block;
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  /* border: 1px solid;   */
+  bottom: 0;
+  
+}
+
+.back .info-container{
+    font-size: 13px;
+    text-align: justify;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    
+   
+
+}
+
+.back h1{
+    color: #0E8AF0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 600;
+    font-style: oblique;
+}
+
+

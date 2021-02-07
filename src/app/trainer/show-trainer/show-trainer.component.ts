@@ -15,9 +15,18 @@ export class ShowTrainerComponent implements OnInit {
   ModalTitle:string;
   ActivateAddEditTrainerComp:boolean = false;
   trainer:any;
+  photoFile:string;
+  
+  
+  
 
   ngOnInit(): void {
     this.refreshTrainerList();
+  }
+
+  
+  genNumber():number{
+    return Math.floor((Math.random()*100));
   }
 
   addClick(){
@@ -26,7 +35,10 @@ export class ShowTrainerComponent implements OnInit {
       name: "",
       email:"",
       gym: "",
-      age: ""
+      age: "",
+      photoFile: "",
+      trainerInfo: ""
+      
     }
     this.ModalTitle="Add Trainer";
     this.ActivateAddEditTrainerComp=true;

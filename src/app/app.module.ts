@@ -7,7 +7,7 @@ import { TrainerComponent } from './trainer/trainer.component';
 import { ShowTrainerComponent } from './trainer/show-trainer/show-trainer.component';
 import { AddEditTrainerComponent } from './trainer/add-edit-trainer/add-edit-trainer.component';
 import { SharedService} from './shared.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProgramComponent } from './program/program.component';
 import { ShowProgramComponent } from './program/show-program/show-program.component';
@@ -16,6 +16,13 @@ import { CourseComponent } from './course/course.component';
 import { ShowCourseComponent } from './course/show-course/show-course.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
+import { ContactComponent } from './contact/contact.component';
+import { HttpInterceptorService } from './login/http/http-interceptor.service';
+import { BasicAuthenticationService } from './login/basic-authentication.service';
+import { FooterComponent } from './footer/footer.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+
 
 
 
@@ -33,6 +40,11 @@ import { LoginComponent } from './login/login.component';
     ShowCourseComponent,
     HomeComponent,
     LoginComponent,
+    LogoutComponent,
+    ContactComponent,
+    FooterComponent,
+    UserProfileComponent,
+  
     
     
     
@@ -44,7 +56,14 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [SharedService],
+  providers: [SharedService,
+    { provide: HTTP_INTERCEPTORS, useClass:HttpInterceptorService, multi: true},
+      
+    
+
+   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+

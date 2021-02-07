@@ -22,6 +22,18 @@
         <input type ="text" class ="form-control" [(ngModel)] ="email"
         placeholder="Enter Trainer Email">
     </div>
+    
+    <label class ="col-sm-2 col-form-label">About me</label>
+    <div class = "col-sm-10">
+        <input type = "text" class ="form-control" [(ngModel)]="trainerInfo"
+        placeholder="Enter Trainer Info">
+    </div>
+
+    <label class ="col-sm-2 col-form-label">Photo</label>
+    <div class ="col-sm-10">
+        <input class name="m2-2 ml-2" type ="name" name="image" id="image" class ="form-control" [(ngModel)] ="photoFile"
+        placeholder="Enter Trainer Photo">
+    </div>
 </div>
 
 <button (click) = "addTrainer()" *ngIf="trainer.trainerID==0" class="btn btn-primary">

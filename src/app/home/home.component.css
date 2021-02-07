@@ -1,16 +1,22 @@
-body {
-   border-radius:12px;
-   transition: all 100ms ease-in-out;
-   background-attachment: fixed;
+.bodycustom {
+   /* border-radius:12px;
+   transition: all 100ms ease-in-out; */
+   /* background-attachment: fixed; */
+   background-color: black;
+   color: black;
+   /* background-image: url('https://images.pexels.com/photos/4720236/pexels-photo-4720236.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'); */
    
 }
 
 h1{
- font-family: Georgia, 'Times New Roman', Times, serif;
- font-weight: 600;
- font-style: italic;
- text-align: center;
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   font-weight: 800;
+   font-variant: small-caps;
+   color:darkblue;
+   text-align: center;
+   text-shadow: rgb(230, 80, 25);
 }
+
 
 .center{
    display: block;
@@ -19,6 +25,15 @@ h1{
    width:50%;
 
  }
+ 
+ .titlediv{
+    background-color: rgb(235, 179, 68);
+    border-style:solid;
+    box-sizing: content-box;
+    color:black;
+    
+ }
 
+ 
 
 

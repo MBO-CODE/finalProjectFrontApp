@@ -23,10 +23,10 @@ export class AddEditProgComponent implements OnInit {
 
   ngOnInit(): void {
     this.trainer=new Trainer();
-    this.loadTrainerList();
+    this.loadProgramList();
   }
 
-  loadTrainerList(){
+  loadProgramList(){
     this.service.getTrainerList().subscribe((data:any)=>{
     this.trainersList = data;
     

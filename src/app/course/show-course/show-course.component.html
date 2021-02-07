@@ -1,8 +1,11 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+  integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
 <body>
 
   <!-- Modal -->
-  <div class="modal fade" id="courseaddmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="courseaddmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -13,102 +16,134 @@
         </div>
 
         
-        <div class="modal-body">
-            
-                <div class ="form-froup row">
-                    <label class ="col-sm-2 col-form-label">Course</label>
-                    <div class ="col-sm-10">
-                        <input type ="text" class ="form-control" [(ngModel)] ="csName"
-                        placeholder="Enter Course">
-                    </div>
+          <div class="modal-body">
+            <div class="form-froup row">
+              <label class="col-sm-2 col-form-label">Course</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" [(ngModel)]="csName" placeholder="Enter Course">
+              </div>
 
-                    <label class ="col-sm-2 col-form-label">Starting Date</label>
-                    <div class ="col-sm-10">
-                        <input type ="text" class ="form-control" [(ngModel)] ="csDate"
-                        placeholder="Enter Date">
-                    </div>
+              <label class="col-sm-2 col-form-label">Starting Date</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" [(ngModel)]="csDate" placeholder="Enter Date">
+              </div>
 
-                    <label class ="col-sm-2 col-form-label">Details</label>
-                    <div class ="col-sm-10">
-                    <input type ="text" class ="form-control" [(ngModel)] ="details"
-                    placeholder="Enter Details">
-                    </div>
-                </div>   
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <label class="col-sm-2 col-form-label">Details</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" [(ngModel)]="details" placeholder="Enter Details">
+              </div>
 
-          <button type="button" class="btn btn-primary">
-            Save
-            </button>
-            
-          
-            
-        </div>
-        
+              <label for="trainer" class ="col-sm-2 col-form-label">Trainers</label>
+              <div class ="col-sm-10">
+              <select class = "form-control" name="trainer" id="Trainer" multiple [(ngModel)] = "trainerLs" >
+                  <option>--Select--</option>
+                      <option *ngFor="let trainerx of trainerLs" [ngValue]= trainerx>
+                        {{trainerx.name}}
+                      </option>
+                      
+                     
+              </select>
+                  <p>Trainers:{{trainer.name}}</p>
+                  
+              </div>
+
+              
+            </div>
+          </div>
+
+          <!-- <button (click) = "addCourse()" *ngIf="course.courseId==0" class="btn btn-primary">
+            Add
+        </button>
+        <button (click) = "updateCourse()" *ngIf="course.courseId!=0" class="btn btn-primary">
+            Update
+        </button> -->
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+            <button type="submit"  name="savedata" class="btn btn-primary" >
+              Save</button>
+
+          </div>
+       
       </div>
     </div>
   </div>
 
-    <div class="container">
-        <div class="jumbotron">
-            <div class="card">
-            </div>
-            <div class="card-body">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#courseaddmodal">
-                    ADD COURSE
-                  </button>
-            </div>
-        </div>
-    </div>
+  <!-- <div class="container">
+    <div class="jumbotron">
+      <div class="card">
+      </div> -->
+      <div class="card-body">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#courseaddmodal">
+          ADD COURSE
+        </button>
+      </div>
+    <!-- </div>
+  </div> -->
 
 
 
 
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.js" integrity="sha512-1lagjLfnC1I0iqH9plHYIUq3vDMfjhZsLy9elfK89RBcpcRcx4l+kRJBSnHh2Mh6kLxRHoObD1M5UTUbgFy6nA==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.js"
+    integrity="sha512-1lagjLfnC1I0iqH9plHYIUq3vDMfjhZsLy9elfK89RBcpcRcx4l+kRJBSnHh2Mh6kLxRHoObD1M5UTUbgFy6nA=="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
 </body>
-<table class = "table table-striped">
-    <thead>
-        <tr>
-            <th>Course Id</th>
-            <th>Course Name</th>
-            <th>Starting Date</th>
-            <th>Details</th>
-            <th>Trainers</th>
-            <th>Options</th>
-        </tr>
-    </thead>
-        <tbody>
-            <tr *ngFor ="let dataItem of CourseList">
-                <td>{{dataItem.courseId}}</td>
-                <td>{{dataItem.csName}}</td>
-                <td>{{dataItem.csDate}}</td>
-                <td>{{dataItem.details}}</td>
-                <td>{{dataItem.trainersLs}}</td>
-                <td>
-                    <button type = "button" class ="btn btn-lght mr-1"
-                    data-toggle="modal" data-target="#exampleModal"
-                    (click)="editClick(dataItem)"
-                    data-backdrop="static" data-keyboard = "false"
-                     >
+<table class="table table-striped">
+  <thead class="thead">
+    <tr>
+      <th>#</th>
+      <th>
+        <div class ="d-flex flex row">
+          <input [(ngModel)]="CourseNameFilter" class="form-control" (keyup)="FilterFn()" placeholder="Filter">
+        </div> 
+        
+        Name</th>
+      <th>
+        <div class ="d-flex flex row">
+          <input [(ngModel)]="CourseDateFilter" class="form-control" (keyup)="FilterFn()" placeholder="Filter">
+        </div> 
 
-                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
-                      <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
-                    </svg>
-                    </button>
-                    <button type = "button" class ="btn btn-lght mr-1"
-                    (click)="deleteClick(dataItem)"
-                    >
-                    
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
-                      <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
-                    </svg>
-                    </button>
-                </td>
-            </tr>
-        </tbody>
+        Starting Date</th>
+      <th>Details</th>
+      <th>Trainers</th>
+      <th>Options</th>
+    </tr>
+  </thead>
+  <tbody class="tbody">
+    <tr *ngFor="let dataItem of CourseList">
+      <td class="tdid">{{dataItem.courseId}}.</td>
+      <td>{{dataItem.csName}}</td>
+      <td>{{dataItem.csDate}}</td>
+      <td>{{dataItem.details}}</td>
+      <td><span *ngFor="let trainer of dataItem.trainerLs">{{trainer.name}} </span></td>
+      <td>
+          <button type="button" class="btn btn-lght mr-1" data-toggle="modal" data-target="#exampleModal"
+          (click)="editClick(dataItem)" data-backdrop="static" data-keyboard="false">
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill"
+            viewBox="0 0 16 16">
+            <path
+              d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z" />
+          </svg>
+        </button>
+        <button type="button" class="btn btn-lght mr-1" (click)="deleteClick(dataItem)">
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill"
+            viewBox="0 0 16 16">
+            <path
+              d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+          </svg>
+        </button>
+      </td>
+    </tr>
+  </tbody>
 </table>

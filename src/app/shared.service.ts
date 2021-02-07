@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -55,10 +57,10 @@ export class SharedService {
   //}
 
   getCourseList(){
-    return this.http.get<any>(this.APIUrl+ '/courses')
+    return this.http.get<any>(this.APIUrl +'/courses');
   }
   addCourse(val:any){
-  return this.http.post(this.APIUrl+ '/course', val)
+  return this.http.post(this.APIUrl+ '/courses', val)
   }
 
   updateCourse(val:any){
